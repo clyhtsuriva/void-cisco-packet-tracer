@@ -18,3 +18,11 @@ wget https://raw.githubusercontent.com/p0txky/void-packettracer/master/install_p
 TO INSTALL
 
 sudo bash install_pt.sh
+
+TO RUN
+
+/opt/pt/packettracer
+
+you can symbolic link using
+
+sudo ln -sf /opt/pt/packettracer /usr/local/bin/packettracer
