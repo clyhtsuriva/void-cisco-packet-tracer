@@ -15,14 +15,14 @@
 
 wget https://raw.githubusercontent.com/p0txky/void-packettracer/master/install_pt.sh
 
-TO INSTALL
+**TO INSTALL**
 
 sudo bash install_pt.sh
 
-TO RUN
+**TO RUN**
 
 /opt/pt/packettracer
 
-you can symbolic link using
+**You can do symbolic link using**
 
 sudo ln -sf /opt/pt/packettracer /usr/local/bin/packettracer
