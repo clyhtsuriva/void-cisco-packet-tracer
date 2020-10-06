@@ -1,17 +1,16 @@
-## Script para instalação do Cisco Packet Tracer 7.3.1 
+## Script for installing Cisco Packet Tracer 7.3.1 
 
-###### O script foi testado no Manjaro Linux, Arch Linux e openSUSE Tumbleweed, todos na versão 64 bits
+###### VOID-LINUX
 
-- Para instalar, execute no terminal:
+- PREREQUISITES
 
-curl -s https://raw.githubusercontent.com/marcelobaptista/packettracer/master/install_pt.sh | sudo bash
+1. ) PacketTracer_731_amd64.deb - from netacad.com
+2. ) xz - The XZ compression utilities
+3. ) xdg-utils - Tools to assist applications with various desktop integration tasks
+4. ) binutils - for ar 
 
 ***************************************************************************************************
 
-## Script for installing Cisco Packet Tracer 7.3.1
+## Download the script - make sure the PacketTracer_731_amd64.deb and the install script is in the same folder
 
-###### The script was tested on Manjaro Linux, Arch Linux and openSUSE Tumbleweed, all in the 64-bit version
-
-- To install, run in the terminal:
-
-curl -s https://raw.githubusercontent.com/marcelobaptista/packettracer/master/install_pt.sh | sudo bash
+wget https://raw.githubusercontent.com/p0txky/void-packettracer/master/install_pt.sh
