@@ -14,3 +14,6 @@
 ## Download the script - make sure the PacketTracer_731_amd64.deb and the install script is in the same folder
 
 wget https://raw.githubusercontent.com/p0txky/void-packettracer/master/install_pt.sh
+
+TO INSTALL
+sudo bash install_pt.sh
