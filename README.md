@@ -4,14 +4,14 @@
 
 - PREREQUISITES
 
-1. ) PacketTracer_731_amd64.deb - from netacad.com
+1. ) PacketTracer_731_amd64.deb - from [NETACAD](netacad.com)
 2. ) xz - The XZ compression utilities
 3. ) xdg-utils - Tools to assist applications with various desktop integration tasks
 4. ) binutils - for ar 
 
 ***************************************************************************************************
 
-## Download the script - make sure the PacketTracer_731_amd64.deb and the install script is in the same folder
+#### Download the script - make sure the PacketTracer_731_amd64.deb and the install script is in the same folder
 
 wget https://raw.githubusercontent.com/p0txky/void-packettracer/master/install_pt.sh
 
@@ -25,4 +25,4 @@ sudo bash install_pt.sh
 
 **You can do symbolic link using**
 
-sudo ln -sf /opt/pt/packettracer /usr/local/bin/packettracer
+sudo ln -s /opt/pt/packettracer /usr/local/bin/packettracer
