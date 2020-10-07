@@ -4,10 +4,10 @@
 
 - PREREQUISITES
 
-1. PacketTracer_731_amd64.deb - from [NETACAD](netacad.com)
-1. xz - The XZ compression utilities
-1. xdg-utils - Tools to assist applications with various desktop integration tasks
-1. binutils - for ar 
+1. ) PacketTracer_731_amd64.deb - [NETACAD](netacad.com)
+2. ) xz - The XZ compression utilities
+3. ) xdg-utils - Tools to assist applications with various desktop integration tasks
+4. ) binutils - for ar 
 
 ***************************************************************************************************
 
