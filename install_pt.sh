@@ -2,7 +2,7 @@
 #
 #EXTRACT FILES
 #{{{
-echo ""
+echo "createing temporary files..."
 DIR="/tmp/PacketTracer/"
 if [ -d "$DIR" ]; then
         rm -rf "$DIR"
