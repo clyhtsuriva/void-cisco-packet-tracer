@@ -26,3 +26,13 @@ sudo bash install_pt.sh
 **You can do symbolic link using**
 
 sudo ln -s /opt/pt/packettracer /usr/local/bin/packettracer
+
+**TO REMOVE**
+
+if you use symlink remove it:
+
+sudo rm /usr/local/bin/packettracer
+
+then:
+
+sudo bash uninstall.sh
