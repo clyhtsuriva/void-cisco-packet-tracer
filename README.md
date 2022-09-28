@@ -1,7 +1,10 @@
 # Cisco Packet Tracer on Void Linux
-![Shellcheck workflow](https://github.com/clyhtsuriva/void-packettracer/actions/workflows/shellcheck-actions.yml/badge.svg)
+
+Following https://github.com/void-linux/void-packages/issues/39294, I tried to improve an already existing Cisco Packet Tracer unofficial installer for Void Linux.
 
 **Tested with Cisco Packet Tracer 820 for Ubuntu 64 bit on Void Linux x86_64**
+
+![Shellcheck workflow](https://github.com/clyhtsuriva/void-packettracer/actions/workflows/shellcheck-actions.yml/badge.svg)
 
 ## Prerequisites
 
