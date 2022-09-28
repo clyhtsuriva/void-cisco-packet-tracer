@@ -1,64 +1,40 @@
-#!/bin/bash
-#
-#EXTRACT FILES
-#{{{
+#!/usr/bin/env bash
+
+# help to use the program
+helpy(){
+printf "command: %s <path>\n" "$0"
+printf "path: path to the Cisco Packet Tracer .deb file\n"
+}
+
+# verify the .deb file
+[ "$1" == "-h" ] && helpy && exit 1
+[ ! -f "$1" ] || [ "$1" == "-h" ] && helpy && exit 1 # if it doesn't exists
+DEB_FILE_PATH="$1"
+DEB_FILE=$(echo "$DEB_FILE_PATH" | grep -o '[^/]*$')
+
+
+# extract files
 echo "creating temporary files..."
-DIR="/tmp/PacketTracer/"
-if [ -d "$DIR" ]; then
-        rm -rf "$DIR"
-else
-        mkdir /tmp/PacketTracer/
-fi
-cp PacketTracer_731_amd64.deb /tmp/PacketTracer/
-cd /tmp/PacketTracer/
-ar -xv PacketTracer_731_amd64.deb
+DIR="$(mktemp -d)"
+
+cp "$DEB_FILE_PATH" "$DIR"
+pushd "$DIR" || exit 1
+ar -xv "$DEB_FILE"
 mkdir control
-tar -C control -Jxf control.tar.xz
+tar -C control -Jxvf control.tar.xz
 mkdir data
-tar -C data -Jxf data.tar.xz
-cd data
-#}}}
-#
-#REMOVE PREVIOUS VERSION
-#{{{
-rm -rf /opt/pt
-rm -rf /usr/share/applications/cisco-pt7.desktop
-rm -rf /usr/share/applications/cisco-ptsa7.desktop
-rm -rf /usr/share/icons/gnome/48x48/mimetypes/pka.png
-rm -rf /usr/share/icons/gnome/48x48/mimetypes/pkt.png
-rm -rf /usr/share/icons/gnome/48x48/mimetypes/pkz.png
-rm -rf /usr/share/mime/packages/cisco-pka.xml
-rm -rf /usr/share/mime/packages/cisco-pkt.xml
-rm -rf /usr/share/mime/packages/cisco-pkz.xml
-#}}}
-#
-#COPY FILES USR,OPT
-#{{{
-cp -r usr /
-cp -r opt /
-#}}}
-#
-#Setup The Desktop
-#{{{
-xdg-desktop-menu install /usr/share/applications/cisco-pt7.desktop
-xdg-desktop-menu install /usr/share/applications/cisco-ptsa7.desktop
-update-mime-database /usr/share/mime
-gtk-update-icon-cache --force --ignore-theme-index /usr/share/icons/gnome
-xdg-mime default cisco-ptsa7.desktop x-scheme-handler/pttp
-#}}}
-#
-#Remove temporary files
-#{{{
-rm -rf /tmp/PacketTracer/
-#}}}
-#
-#It's done
-#{{{
-echo ""
-echo "Press <ENTER> to continue..."
-echo ""
-read 
-echo "Bye!Bye!"
-echo ""
-echo ""
-#}}}
+tar -C data -Jxvf data.tar.xz
+cd data || exit 1
+
+
+# remove previous version
+rm -rfv /opt/pt
+
+
+# copy opt folder
+cp -rv ./opt/ /
+
+
+# remove temporary files
+popd || exit 1
+rm -rfv "$DIR"

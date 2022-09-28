@@ -1,50 +1,36 @@
-## Script for installing Cisco Packet Tracer 7.3.1 
+# Cisco Packet Tracer on Void Linux
 
-###### VOID-LINUX
+**Tested with Cisco Packet Tracer 820 for Ubuntu 64 bit**
 
-- PREREQUISITES
+## Prerequisites
 
-1. PacketTracer_731_amd64.deb - [NETACAD](netacad.com)
-1. xz - The XZ compression utilities
-1. xdg-utils - Tools to assist applications with various desktop integration tasks
-1. binutils - for ar 
+- CiscoPacketTracer_*.deb - Available on [NetAcad](https://www.netacad.com/portal/resources/packet-tracer) (**account needed**)
+- xz - XZ compression utilities
+- xdg-utils - Tools to assist applications with various desktop integration tasks
+- binutils - GNU binary utilities - containing ar
 
-***************************************************************************************************
+### Depedencies installation command
 
-##### Download the script - make sure the PacketTracer_731_amd64.deb and the install script is in the same folder
-
-```bash
-wget https://raw.githubusercontent.com/p0txky/void-packettracer/master/install_pt.sh
+```sh
+xbps-install -S xz xdg-utils binutils
 ```
 
-**TO INSTALL**
+## Installation
 
-```bash
-sudo bash install_pt.sh
+```sh
+curl -LO https://raw.githubusercontent.com/clyhtsuriva/void-packettracer/master/install_pt.sh
+chmod +x ./install_pt.sh
+./install_pt.sh <.deb file>
 ```
 
-**TO RUN**
+## Running
 
-```bash
+```sh
 /opt/pt/packettracer
 ```
 
-**You can do symbolic link using**
+## Uninstallation
 
-```bash
-sudo ln -s /opt/pt/packettracer /usr/local/bin/packettracer
-```
-
-**TO REMOVE**
-
-if you use symlink remove it:
-
-```bash
-sudo rm /usr/local/bin/packettracer
-```
-
-then:
-
-```bash
-sudo bash uninstall.sh
+```sh
+curl -s https://raw.githubusercontent.com/clyhtsuriva/void-packettracer/master/uninstall.sh | sudo bash
 ```
