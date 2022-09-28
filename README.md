@@ -1,4 +1,5 @@
 # Cisco Packet Tracer on Void Linux
+![example workflow](https://github.com/clyhtsuriva/void-packettracer/actions/workflows/shellcheck-actions.yml/badge.svg)
 
 **Tested with Cisco Packet Tracer 820 for Ubuntu 64 bit**
 
