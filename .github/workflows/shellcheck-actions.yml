@@ -4,11 +4,11 @@ on:
     branches:
       - master
       
-name: "Trigger: Push and PR action"
+name: "ShellCheck: Push and PR action"
 
 jobs:
   shellcheck:
-    name: Shellcheck
+    name: ShellCheck
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
